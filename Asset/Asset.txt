@@ -1,0 +1,4 @@
+Adventurer-1.5.zip
+URL : https://rvros.itch.io/animated-pixel-hero
+用途：プレイヤーのドット絵
+使い方：解凍して中身をPlayer/imgフォルダに入れておく
