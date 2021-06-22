@@ -42,8 +42,28 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	Rect rc = { 200,200,50,100 };//200,200の位置に幅100高さ200の矩形
 
+	char keystate[256];
+
 	while (ProcessMessage() != -1) {
 		ClearDrawScreen();
+		GetHitKeyStateAll(keystate);
+
+		constexpr float speed = 4.0f;
+		if (keystate[KEY_INPUT_LEFT]) {
+			rc.center.x -= speed;
+		}
+		if (keystate[KEY_INPUT_RIGHT]) {
+			rc.center.x += speed;
+		}
+		if (keystate[KEY_INPUT_UP]) {
+			rc.center.y -= speed;
+		}
+		if (keystate[KEY_INPUT_DOWN]) {
+			rc.center.y += speed;
+		}
+
+
+
 		//矩形の表示
 		DrawBox(rc.Left(), rc.Top(), rc.Right(), rc.Bottom(), 0xffffff, true);
 
